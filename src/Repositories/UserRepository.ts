@@ -5,7 +5,7 @@ import AccessToken from '../Models/AccessToken';
 import AccessTokenInterface from '../Models/AccessTokenInterface';
 import UserRepositoryInterface from './UserRepositoryInterface';
 
-export default abstract class UserRepository<User> extends Repository<User> implements UserRepositoryInterface<User> {
+export default abstract class UserRepository<T> extends Repository<T> implements UserRepositoryInterface<T> {
     protected client: ClientInterface;
 
     /**
@@ -22,7 +22,7 @@ export default abstract class UserRepository<User> extends Repository<User> impl
      * @param {object} params
      * @return {Promise<User>>}
      */
-    public async get(token: AccessToken, params?: object): Promise<User> {
+    public async get(token: AccessToken, params?: object): Promise<T> {
         const client: ClientInterface = this.getClient();
         const endpoint: string = this.getEndpoint();
         const request: GetUserRequestInterface = {

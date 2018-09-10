@@ -2,7 +2,7 @@ import { Repository } from '@leebrooks3/typescript';
 import ClientInterface from '../Http/Clients/ClientInterface';
 import AccessToken from '../Models/AccessToken';
 import UserRepositoryInterface from './UserRepositoryInterface';
-export default abstract class UserRepository<User> extends Repository<User> implements UserRepositoryInterface<User> {
+export default abstract class UserRepository<T> extends Repository<T> implements UserRepositoryInterface<T> {
     protected client: ClientInterface;
     /**
      * @param {ClientInterface} client
@@ -15,7 +15,7 @@ export default abstract class UserRepository<User> extends Repository<User> impl
      * @param {object} params
      * @return {Promise<User>>}
      */
-    get(token: AccessToken, params?: object): Promise<User>;
+    get(token: AccessToken, params?: object): Promise<T>;
     /** @inheritDoc */
     protected getClient(): ClientInterface;
 }

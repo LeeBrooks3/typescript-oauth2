@@ -1,6 +1,6 @@
 import { Repository } from '@leebrooks3/typescript';
 import AccessToken from '../Models/AccessToken';
-export default interface UserRepositoryInterface<User> extends Repository<User> {
+export default interface UserRepositoryInterface<T> extends Repository<T> {
     /**
      * Retrieve the user of the given access token.
      *
@@ -8,6 +8,6 @@ export default interface UserRepositoryInterface<User> extends Repository<User> 
      * @param {object} params
      * @return {Promise<User>>}
      */
-    get(token: AccessToken, params?: object): Promise<User>;
+    get(token: AccessToken, params?: object): Promise<T>;
 }
 //# sourceMappingURL=UserRepositoryInterface.d.ts.map
