@@ -1,0 +1,1 @@
+{"version":3,"file":"CreateClientTokenRequestInterface.d.ts","sourceRoot":"","sources":["../../../../src/Http/Requests/AccessToken/CreateClientTokenRequestInterface.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,OAAO,WAAW,iCAAiC;IACtD,SAAS,EAAE,MAAM,CAAC;IAClB,aAAa,EAAE,MAAM,CAAC;IACtB,UAAU,EAAE,MAAM,CAAC;IACnB,KAAK,CAAC,EAAE,MAAM,CAAC;CAClB"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"GetUserRequestInterface.d.ts","sourceRoot":"","sources":["../../../../src/Http/Requests/User/GetUserRequestInterface.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,OAAO,WAAW,uBAAuB;IAC5C,OAAO,EAAE;QACL,aAAa,EAAE,MAAM,CAAC;KACzB,CAAC;CACL"}

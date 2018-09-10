@@ -1,0 +1,1 @@
+{"version":3,"file":"AccessTokenInterface.d.ts","sourceRoot":"","sources":["../../src/Models/AccessTokenInterface.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,OAAO,WAAW,oBAAoB;IACzC,YAAY,EAAE,MAAM,CAAC;IACrB,aAAa,CAAC,EAAE,MAAM,CAAC;IACvB,UAAU,EAAE,MAAM,CAAC;IACnB,UAAU,CAAC,EAAE,MAAM,CAAC;CACvB"}
