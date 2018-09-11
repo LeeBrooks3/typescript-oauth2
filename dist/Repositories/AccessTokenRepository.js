@@ -55,6 +55,7 @@ var AccessTokenRepository = /** @class */ (function (_super) {
     function AccessTokenRepository(client, endpoint) {
         var _this = _super.call(this, client) || this;
         _this.endpoint = 'oauth/token';
+        _this.namespace = null;
         if (endpoint) {
             _this.endpoint = endpoint;
         }
