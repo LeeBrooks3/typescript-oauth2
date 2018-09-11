@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "types": "types/index.d.ts",
   "keywords": [
-    "TypeScript"
+    "TypeScript",
+    "OAuth2"
   ],
   "author": "Lee Brooks <leebrooks93@gmail.com>",
   "license": "MIT",
