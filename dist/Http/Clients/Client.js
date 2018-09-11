@@ -14,9 +14,7 @@ var typescript_1 = require("@leebrooks3/typescript");
 var Client = /** @class */ (function (_super) {
     __extends(Client, _super);
     /**
-     * @param {number} clientId
-     * @param {string} clientSecret
-     * @param {string} serverUrl
+     * Sets the client id & secret and configures the clients base url.
      */
     function Client(clientId, clientSecret, serverUrl) {
         var _this = _super.call(this, {
@@ -26,19 +24,11 @@ var Client = /** @class */ (function (_super) {
         _this.clientSecret = clientSecret;
         return _this;
     }
-    /**
-     * Returns the oauth2 client id.
-     *
-     * @return {number}
-     */
+    /** @inheritDoc */
     Client.prototype.getClientId = function () {
         return this.clientId;
     };
-    /**
-     * Returns oauth2 client secret.
-     *
-     * @return {number}
-     */
+    /** @inheritDoc */
     Client.prototype.getClientSecret = function () {
         return this.clientSecret;
     };

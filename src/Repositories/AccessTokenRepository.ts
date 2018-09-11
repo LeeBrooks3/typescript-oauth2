@@ -11,8 +11,7 @@ export default class AccessTokenRepository extends Repository<AccessToken> imple
     protected endpoint: string = 'oauth/token';
 
     /**
-     * @param {ClientInterface} client
-     * @param {string} endpoint
+     * Sets the client instance and the endpoint.
      */
     public constructor(client: ClientInterface, endpoint?: string) {
         super(client);

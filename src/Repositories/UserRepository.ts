@@ -1,27 +1,21 @@
-import { Repository, ResponseInterface } from '@leebrooks3/typescript';
+import { ModelInterface, Repository, ResponseInterface } from '@leebrooks3/typescript';
 import ClientInterface from '../Http/Clients/ClientInterface';
 import GetUserRequestInterface from '../Http/Requests/User/GetUserRequestInterface';
 import AccessToken from '../Models/AccessToken';
 import AccessTokenInterface from '../Models/AccessTokenInterface';
 import UserRepositoryInterface from './UserRepositoryInterface';
 
-export default abstract class UserRepository<T> extends Repository<T> implements UserRepositoryInterface<T> {
+export default abstract class UserRepository<T = ModelInterface> extends Repository<T> implements UserRepositoryInterface<T> { // tslint:disable-line max-line-length
     protected client: ClientInterface;
 
     /**
-     * @param {ClientInterface} client
+     * Sets the client instance.
      */
     public constructor(client: ClientInterface) {
         super(client);
     }
 
-    /**
-     * Retrieve the user of the given access token.
-     *
-     * @param {AccessToken} token
-     * @param {object} params
-     * @return {Promise<User>>}
-     */
+    /** @inheritDoc */
     public async get(token: AccessToken, params?: object): Promise<T> {
         const client: ClientInterface = this.getClient();
         const endpoint: string = this.getEndpoint();

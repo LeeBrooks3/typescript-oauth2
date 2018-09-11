@@ -4,22 +4,16 @@ import ClientInterface from './ClientInterface';
 export default class Client extends BaseClient implements ClientInterface {
     /**
      * The oauth2 client id.
-     *
-     * @var {number}
      */
     protected readonly clientId: number;
 
     /**
      * The oauth2 client secret.
-     *
-     * @var {string}
      */
     protected readonly clientSecret: string;
 
     /**
-     * @param {number} clientId
-     * @param {string} clientSecret
-     * @param {string} serverUrl
+     * Sets the client id & secret and configures the clients base url.
      */
     public constructor(clientId: number, clientSecret: string, serverUrl: string) {
         super({
@@ -30,20 +24,12 @@ export default class Client extends BaseClient implements ClientInterface {
         this.clientSecret = clientSecret;
     }
 
-    /**
-     * Returns the oauth2 client id.
-     *
-     * @return {number}
-     */
+    /** @inheritDoc */
     public getClientId(): number {
         return this.clientId;
     }
 
-    /**
-     * Returns oauth2 client secret.
-     *
-     * @return {number}
-     */
+    /** @inheritDoc */
     public getClientSecret(): string {
         return this.clientSecret;
     }

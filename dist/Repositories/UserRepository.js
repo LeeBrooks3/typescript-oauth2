@@ -57,18 +57,12 @@ var typescript_1 = require("@leebrooks3/typescript");
 var UserRepository = /** @class */ (function (_super) {
     __extends(UserRepository, _super);
     /**
-     * @param {ClientInterface} client
+     * Sets the client instance.
      */
     function UserRepository(client) {
         return _super.call(this, client) || this;
     }
-    /**
-     * Retrieve the user of the given access token.
-     *
-     * @param {AccessToken} token
-     * @param {object} params
-     * @return {Promise<User>>}
-     */
+    /** @inheritDoc */
     UserRepository.prototype.get = function (token, params) {
         return __awaiter(this, void 0, void 0, function () {
             var client, endpoint, request, response, payload;

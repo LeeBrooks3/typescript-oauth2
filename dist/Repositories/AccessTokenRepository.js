@@ -50,8 +50,7 @@ var AccessToken_1 = require("../Models/AccessToken");
 var AccessTokenRepository = /** @class */ (function (_super) {
     __extends(AccessTokenRepository, _super);
     /**
-     * @param {ClientInterface} client
-     * @param {string} endpoint
+     * Sets the client instance and the endpoint.
      */
     function AccessTokenRepository(client, endpoint) {
         var _this = _super.call(this, client) || this;

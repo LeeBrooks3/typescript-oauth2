@@ -9,8 +9,7 @@ export default class AccessTokenRepository extends Repository<AccessToken> imple
     protected client: ClientInterface;
     protected endpoint: string;
     /**
-     * @param {ClientInterface} client
-     * @param {string} endpoint
+     * Sets the client instance and the endpoint.
      */
     constructor(client: ClientInterface, endpoint?: string);
     /** @inheritDoc */
