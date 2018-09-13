@@ -9,7 +9,6 @@ import AccessTokenRepositoryInterface from './AccessTokenRepositoryInterface';
 export default class AccessTokenRepository extends Repository<AccessToken> implements AccessTokenRepositoryInterface {
     protected client: ClientInterface;
     protected endpoint: string = 'oauth/token';
-    protected namespace: string = null;
 
     /**
      * Sets the client instance and the endpoint.
@@ -23,29 +22,37 @@ export default class AccessTokenRepository extends Repository<AccessToken> imple
     }
 
     /** @inheritDoc */
-    public async createUserToken(username: string, password: string, scope: string = ''): Promise<AccessToken> {
+    public async createUserToken(username: string, password: string, scope?: string): Promise<AccessToken> {
         const client: ClientInterface = this.getClient();
-
-        return this.create({
+        const attributes: CreateUserTokenRequestInterface = {
             client_id: client.getClientId(),
             client_secret: client.getClientSecret(),
             grant_type: 'password',
             password,
-            scope,
             username,
-        });
+        };
+
+        if (scope) {
+            attributes.scope = scope;
+        }
+
+        return this.create(attributes);
     }
 
     /** @inheritDoc */
     public async createClientToken(scope: string = ''): Promise<AccessToken> {
         const client: ClientInterface = this.getClient();
-
-        return this.create({
+        const attributes: CreateClientTokenRequestInterface = {
             client_id: client.getClientId(),
             client_secret: client.getClientSecret(),
             grant_type: 'client_credentials',
-            scope,
-        });
+        };
+
+        if (scope) {
+            attributes.scope = scope;
+        }
+
+        return this.create(attributes);
     }
 
     /**

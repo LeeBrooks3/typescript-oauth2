@@ -55,7 +55,6 @@ var AccessTokenRepository = /** @class */ (function (_super) {
     function AccessTokenRepository(client, endpoint) {
         var _this = _super.call(this, client) || this;
         _this.endpoint = 'oauth/token';
-        _this.namespace = null;
         if (endpoint) {
             _this.endpoint = endpoint;
         }
@@ -63,19 +62,21 @@ var AccessTokenRepository = /** @class */ (function (_super) {
     }
     /** @inheritDoc */
     AccessTokenRepository.prototype.createUserToken = function (username, password, scope) {
-        if (scope === void 0) { scope = ''; }
         return __awaiter(this, void 0, void 0, function () {
-            var client;
+            var client, attributes;
             return __generator(this, function (_a) {
                 client = this.getClient();
-                return [2 /*return*/, this.create({
-                        client_id: client.getClientId(),
-                        client_secret: client.getClientSecret(),
-                        grant_type: 'password',
-                        password: password,
-                        scope: scope,
-                        username: username
-                    })];
+                attributes = {
+                    client_id: client.getClientId(),
+                    client_secret: client.getClientSecret(),
+                    grant_type: 'password',
+                    password: password,
+                    username: username
+                };
+                if (scope) {
+                    attributes.scope = scope;
+                }
+                return [2 /*return*/, this.create(attributes)];
             });
         });
     };
@@ -83,15 +84,18 @@ var AccessTokenRepository = /** @class */ (function (_super) {
     AccessTokenRepository.prototype.createClientToken = function (scope) {
         if (scope === void 0) { scope = ''; }
         return __awaiter(this, void 0, void 0, function () {
-            var client;
+            var client, attributes;
             return __generator(this, function (_a) {
                 client = this.getClient();
-                return [2 /*return*/, this.create({
-                        client_id: client.getClientId(),
-                        client_secret: client.getClientSecret(),
-                        grant_type: 'client_credentials',
-                        scope: scope
-                    })];
+                attributes = {
+                    client_id: client.getClientId(),
+                    client_secret: client.getClientSecret(),
+                    grant_type: 'client_credentials'
+                };
+                if (scope) {
+                    attributes.scope = scope;
+                }
+                return [2 /*return*/, this.create(attributes)];
             });
         });
     };

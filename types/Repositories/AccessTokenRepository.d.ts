@@ -8,7 +8,6 @@ import AccessTokenRepositoryInterface from './AccessTokenRepositoryInterface';
 export default class AccessTokenRepository extends Repository<AccessToken> implements AccessTokenRepositoryInterface {
     protected client: ClientInterface;
     protected endpoint: string;
-    protected namespace: string;
     /**
      * Sets the client instance and the endpoint.
      */
